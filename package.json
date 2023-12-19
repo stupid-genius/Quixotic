@@ -1,0 +1,47 @@
+{
+	"name": "Quixotic",
+	"version": "1.3.0",
+	"description": "A non-framework framework using Web Components & htmx",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/stupid-genius/Quixotic"
+	},
+	"author": "Stupid Genius Software",
+	"license": "GPL-3.0",
+	"main": "app/server/index.js",
+	"engines": {
+		"node": "^16.14.0"
+	},
+	"dependencies": {
+		"ejs": "2.5.5",
+		"express": "^4.17.1",
+		"htmx.org": "1.9.8",
+		"morgan": "^1.10.0",
+		"serve-favicon": "^2.5.0",
+		"winston": "^3.3.3"
+	},
+	"devDependencies": {
+		"browser-sync": "^2.29.3",
+		"chai": "^4.3.10",
+		"esbuild": "^0.17.19",
+		"eslint": "^8.3.0",
+		"karma": "^6.4.2",
+		"karma-chai": "^0.1.0",
+		"karma-chrome-launcher": "^3.2.0",
+		"karma-firefox-launcher": "^2.1.2",
+		"karma-mocha": "^2.0.1",
+		"karma-mocha-reporter": "^2.2.5",
+		"mocha": "^9.2.2"
+	},
+	"scripts": {
+		"build": "npm run clean; ./build.sh",
+		"clean": "rm -rf dist",
+		"container": "docker run --name webapp -p80:3000 --rm quixotic",
+		"docker": "docker build -t quixotic .",
+		"esbuild": "esbuild",
+		"nodemon": "npx nodemon dist/server/index.js",
+		"package": "mkdir -p package; cd dist; npm pack --pack-destination='../package/'",
+		"start": "NODE_ENV=development ./serve.sh",
+		"test": "mocha test/server && karma start"
+	}
+}

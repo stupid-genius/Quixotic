@@ -1,0 +1,44 @@
+html, body{
+	background: #171e17;
+	color: darkgreen;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	min-height: 100%;
+}
+body{
+	display: flex;
+	flex-direction: column;
+}
+#header{
+	background: black;
+	border-bottom: lightgreen 1px solid;
+	flex: 0 0 auto;
+	font-size: xx-large;
+	padding: 1em;
+	text-align: center;
+}
+#header h1{
+	margin: 0;
+}
+#main{
+	align-items: center;
+	align-self: center;
+	display: flex;
+	flex: 1 0 auto;
+	font-style: italic;
+	padding: 1em;
+	text-align: center;
+}
+#footer{
+	background: black;
+	border-top: lightgreen 1px solid;
+	bottom: 0;
+	flex: 0 0 auto;
+	font-size: small;
+	padding: .5em 0;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+}
+
